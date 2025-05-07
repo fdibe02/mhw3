@@ -92,7 +92,7 @@ function onDislikeClick(event) {
     //leggo valore del titolo della card
     const cards = document.querySelectorAll('.card');
     
-    const API_KEY_1 = 'S5kgE9gNeRiNpjebnTjSF3bNG2QqvsjHyq89L-frQno';
+    const API_KEY_1 = 'secret';
     
     for(let i = 0; i < cards.length; i++){
       const card = cards[i];
@@ -119,7 +119,7 @@ function onDislikeClick(event) {
   
   function onLoad2(response){
      //Preparo la richiesta
-   const API_KEY_2 = 'yzFAiL1uq5bJze9tBWcd4n7JrctGgQCQ';
+   const API_KEY_2 = 'secret';
    const rest_url_2 = 'https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key='+API_KEY_2;
     
    console.log(rest_url_2);
