@@ -49,12 +49,12 @@ function onDislikeClick(event) {
   
       
       const ny_times_logo = document.createElement('img');
-       ny_times_logo.src = "https://1000logos.net/wp-content/uploads/2017/04/Symbol-New-York-Times.png";
-       side_author_section.appendChild(ny_times_logo);
+      ny_times_logo.src = "https://1000logos.net/wp-content/uploads/2017/04/Symbol-New-York-Times.png";
+      side_author_section.appendChild(ny_times_logo);
    
   
      const by_line = document.createElement('div');
-    by_line.textContent = json.results[i].byline;
+     by_line.textContent = json.results[i].byline;
      side_author_section.appendChild(by_line);
       
   
@@ -89,36 +89,29 @@ function onDislikeClick(event) {
     }
   
   function onLoad1(){
-    //leggo valore del titolo della card
     const cards = document.querySelectorAll('.card');
     
     const API_KEY_1 = 'secret';
     
     for(let i = 0; i < cards.length; i++){
       const card = cards[i];
-      
       const title = card.querySelector('.card-title')
-    
       const title_text = encodeURIComponent(title.textContent);
-   
       const rest_url_1 = 'https://api.unsplash.com/photos/random?query='+title_text+'&orientation=landscape'+'&client_id='+API_KEY_1;
       
       function onJson1(json){
-      //console.log("json1 ricevuto"); 
-       
+      console.log("json1 ricevuto"); 
+
       const image_space = card.querySelector('.image-space');
       const image = document.createElement('img');
       image.src = json.urls.small; 
-      image_space.appendChild(image); 
-        
+      image_space.appendChild(image);   
       }
-      
       fetch(rest_url_1).then(onResponse).then(onJson1);
     }
   } 
   
   function onLoad2(response){
-     //Preparo la richiesta
    const API_KEY_2 = 'secret';
    const rest_url_2 = 'https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key='+API_KEY_2;
     
